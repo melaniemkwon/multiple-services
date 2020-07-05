@@ -1,0 +1,7 @@
+# docker build -t melaniemkwon/complexserver:latest -f Dockerfile.dev .
+FROM node:alpine
+WORKDIR '/app'
+COPY package.json .
+RUN npm install
+COPY . .
+CMD ["npm", "run", "dev"]
